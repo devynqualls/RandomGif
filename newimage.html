@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#">
+  <button class="fetchBtn">Fetch</button>
+  <script>
+        const fetchBtn = document.getElementsByClassName("fetchBtn");
+        const img = document.querySelector('img');
+  fetch('https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY_HERE&s=cats', {mode: 'cors'})
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      console.log(response.data.images.original.url);
+    });
+
+    fetchBtn.addEventListener("click", fetch)
+
+  </script>
+</body>
+</html>
